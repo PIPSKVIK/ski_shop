@@ -23,6 +23,11 @@ const routes = [
     path: "/comments",
     name: "CommentsPage",
     component: () => import("../views/CommentPage")
+  },
+  {
+    path: "/cart",
+    name: "CartPage",
+    component: () => import("../views/CartPage")
   }
 ];
 

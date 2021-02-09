@@ -31,7 +31,6 @@ export default {
 .base {
   background-color: var(--base-layout-background);
   height: 100%;
-  margin-top: 10px;
   border-top: 2px solid var(--vue-color);
   border-bottom: 2px solid var(--vue-color);
 }

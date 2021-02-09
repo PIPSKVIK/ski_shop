@@ -9,10 +9,14 @@
       <search-header-block />
       <div class="header__nav-wrapper">
         <nav-bar />
-        <div class="header__nav-auth">
-          <button>Войти</button>
-          <button>Регистрация</button>
-          <span class="header__nav-cart"> (0) Корзина</span>
+        <div class="header__auth">
+          <div class="header__auth-wrapper">
+            <app-button class="header__auth-enter">Войти</app-button>
+            <app-button class="header__auth-registration">
+              Регистрация
+            </app-button>
+          </div>
+          <ui-btn-cart class="header__auth-cart" />
         </div>
       </div>
     </nav>
@@ -22,9 +26,11 @@
 <script>
 import NavBar from "@/layouts/headerLayoutsElement/NavBar";
 import SearchHeaderBlock from "@/layouts/headerLayoutsElement/SearchHeaderBlock";
+import AppButton from "@/components/appComponents/AppButton";
+import UiBtnCart from "@/components/uiComponents/UiBtnCart";
 export default {
   name: "Header",
-  components: { SearchHeaderBlock, NavBar }
+  components: { UiBtnCart, AppButton, SearchHeaderBlock, NavBar }
 };
 </script>
 
@@ -33,21 +39,12 @@ export default {
   &__nav {
     width: var(--desctop-width);
     padding: 0 15px;
-    margin: 0 auto;
+    margin: 20px auto;
 
     &-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    &-auth {
-    }
-
-    &-cart {
-      background-color: grey;
-      padding: 10px 20px;
-      color: white;
     }
   }
   &__top {
@@ -60,6 +57,19 @@ export default {
       width: 1000px;
       padding: 0 15px;
       margin: 0 auto;
+    }
+  }
+  &__auth {
+    display: flex;
+    align-items: center;
+    &-enter {
+      margin-right: 10px;
+    }
+    &-registration {
+      margin-right: 10px;
+    }
+    &-wrapper {
+      margin-right: 50px;
     }
   }
 }

@@ -1,11 +1,18 @@
 /*background-color: var(--body-color);*/
 
+/*transition: all 0.5s linear;*/
+
 :root {
+  /*color*/
   --vue-color: #3fb984;
+  --vue-color-active: #267053;
   --white-color: #ffffff;
   --black-color: #000000;
   --gray-color: #cdcdcd;
+  --gray-strong-color: #808080;
+  --gray-strong-color-hover: #757575;
   --base-layout-background: #e2e2e2;
 
+  /*wrapper*/
   --desctop-width: 1170px;
 }
