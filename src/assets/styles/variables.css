@@ -1,0 +1,11 @@
+/*background-color: var(--body-color);*/
+
+:root {
+  --vue-color: #3fb984;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: #cdcdcd;
+  --base-layout-background: #e2e2e2;
+
+  --desctop-width: 1170px;
+}

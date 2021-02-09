@@ -1,32 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="container">
+      <header-main />
+      <BaseLayout class="base">
+        <router-view />
+      </BaseLayout>
+      <footer-main />
     </div>
-    <router-view />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style lang="scss"></style>
+<script>
+import BaseLayout from "@/layouts/baseLayoutsElenet/BaseLayout";
+import HeaderMain from "@/layouts/headerLayoutsElement/HeaderMain";
+import FooterMain from "@/layouts/footerLayoutsElement/FooterMain";
+export default {
+  components: { FooterMain, BaseLayout, HeaderMain }
+};
+</script>
+
+<style lang="scss" scoped>
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.base {
+  background-color: var(--base-layout-background);
+  height: 100%;
+  margin-top: 10px;
+  border-top: 2px solid var(--vue-color);
+  border-bottom: 2px solid var(--vue-color);
 }
 </style>
