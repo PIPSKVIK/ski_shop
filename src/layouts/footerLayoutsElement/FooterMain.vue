@@ -16,7 +16,7 @@ export default {
 .footer {
   background-color: var(--gray-color);
   &__wrapper {
-    width: var(--desctop-width);
+    max-width: var(--desctop-width);
     padding: 0 15px;
     margin: 0 auto;
 

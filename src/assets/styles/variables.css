@@ -15,4 +15,6 @@
 
   /*wrapper*/
   --desctop-width: 1170px;
+  --tablet-width: 992px;
+  --mobile-width: 767px;
 }

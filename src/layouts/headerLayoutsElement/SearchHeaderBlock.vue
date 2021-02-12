@@ -59,7 +59,7 @@ export default {
   }
 
   &__input {
-    min-width: 400px;
+    width: 30%;
     position: relative;
     transition-property: color;
     transition-delay: 0.2s;
@@ -82,6 +82,18 @@ export default {
 
   &__input:focus-within {
     color: var(--vue-color);
+  }
+}
+
+@media (max-width: 767px) {
+  .search {
+    &__logo {
+      margin-bottom: 10px;
+    }
+    &__input {
+      width: 60%;
+      margin-bottom: 10px;
+    }
   }
 }
 </style>
