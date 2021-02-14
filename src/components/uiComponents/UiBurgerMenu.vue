@@ -1,7 +1,7 @@
 <template>
-  <div class="menu" @click="toggleIcon = !toggleIcon">
+  <div class="menu" @click="handleClick">
     <app-icon
-      v-if="toggleIcon"
+      v-if="toggleMenu"
       class="menu__icon"
       view-box="0 0 341.333 341.333"
     >
@@ -20,12 +20,20 @@ import IconBurgerMenu from "@/assets/icons/icon-burger-menu";
 import IconCloseMenu from "@/assets/icons/icon-close-menu";
 export default {
   name: "UiBurgerMenu",
+
   components: { IconCloseMenu, IconBurgerMenu, AppIcon },
 
   data() {
     return {
-      toggleIcon: true
+      toggleMenu: true
     };
+  },
+
+  methods: {
+    handleClick() {
+      this.toggleMenu = !this.toggleMenu;
+      this.$emit("handleToggleMenu");
+    }
   }
 };
 </script>
