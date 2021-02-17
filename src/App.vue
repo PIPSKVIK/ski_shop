@@ -2,7 +2,11 @@
   <div id="app">
     <div class="container">
       <transition name="fade">
-        <mobile-nav-menu class="nav-menu" v-if="toggleMenu" />
+        <mobile-nav-menu
+          class="nav-menu"
+          v-if="toggleMenu"
+          @close-icon-menu="toggleMenu = false"
+        />
       </transition>
       <menu-closer
         v-if="toggleMenu"

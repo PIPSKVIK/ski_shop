@@ -7,6 +7,7 @@
       :to="tab.to"
       class="link-tabs__item"
       active-class="link-tabs__item_active"
+      :class="{ 'mobile-menu': mobileMenu }"
     >
       {{ tab.text }}
     </router-link>
@@ -20,6 +21,10 @@ export default {
     tabs: {
       type: Array,
       required: true
+    },
+    mobileMenu: {
+      type: [Boolean, String],
+      default: false
     }
   }
 };
@@ -42,6 +47,17 @@ export default {
       border-bottom: 2px solid var(--vue-color);
       color: var(--vue-color);
     }
+  }
+}
+
+.mobile-menu {
+  display: flex;
+  margin-bottom: 10px;
+  border: none;
+
+  &:hover {
+    border: none;
+    color: var(--white-color);
   }
 }
 </style>

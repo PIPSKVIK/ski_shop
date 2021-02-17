@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <app-router-link :tabs="tabs" />
+    <app-router-link :tabs="tabs" :mobile-menu="mobileMenu" />
   </div>
 </template>
 
@@ -9,6 +9,14 @@ import AppRouterLink from "@/components/appComponents/AppRouterLink";
 export default {
   name: "NavBar",
   components: { AppRouterLink },
+
+  props: {
+    mobileMenu: {
+      type: [String, Boolean],
+      default: false
+    }
+  },
+
   data() {
     return {
       tabs: [
