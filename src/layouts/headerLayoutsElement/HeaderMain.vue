@@ -2,7 +2,10 @@
   <header class="header">
     <div class="header__top">
       <p class="header__top-title">Мы не просто лыжный магазин</p>
-      <ui-burger-menu class="header__top-menu" @handleToggleMenu="$emit('handleToggleMenu')" />
+      <ui-burger-menu
+        class="header__top-menu"
+        @handleToggleMenu="$emit('handleToggleMenu')"
+      />
     </div>
     <nav class="header__nav">
       <search-header-block class="header__nav-search" />
@@ -50,15 +53,16 @@ export default {
   &__top {
     width: 100%;
     background-color: var(--vue-color);
-    padding: 10px 0;
     color: var(--white-color);
     text-align: center;
     &-title {
       margin: 0;
       text-transform: uppercase;
+      padding: 10px 0;
     }
     &-menu {
       display: none;
+      padding: 10px 0;
     }
   }
   &__auth {
@@ -80,7 +84,7 @@ export default {
   .header {
     &__top {
       cursor: pointer;
-      z-index: 1000;
+      z-index: 1015;
       &:hover {
         color: var(--black-color);
       }

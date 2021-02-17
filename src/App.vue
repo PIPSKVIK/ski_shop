@@ -4,6 +4,7 @@
       <transition name="fade">
         <mobile-nav-menu class="nav-menu" v-if="toggleMenu" />
       </transition>
+      <menu-closer v-if="toggleMenu" />
       <header-main @handleToggleMenu="toggleMenu = !toggleMenu" />
       <BaseLayout class="base">
         <router-view />
@@ -19,8 +20,9 @@ import BaseLayout from "@/layouts/baseLayoutsElenet/BaseLayout";
 import HeaderMain from "@/layouts/headerLayoutsElement/HeaderMain";
 import FooterMain from "@/layouts/footerLayoutsElement/FooterMain";
 import MobileNavMenu from "@/layouts/headerLayoutsElement/MobileNavMenu";
+import MenuCloser from "@/components/componentsUtils/MenuCloser";
 export default {
-  components: { MobileNavMenu, FooterMain, BaseLayout, HeaderMain },
+  components: { MenuCloser, MobileNavMenu, FooterMain, BaseLayout, HeaderMain },
 
   data() {
     return {
