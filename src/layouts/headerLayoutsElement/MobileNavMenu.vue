@@ -2,9 +2,6 @@
   <div class="menu">
     <p>123</p>
     <p>123</p>
-    <p>123</p>
-    <p>123</p>
-    <p>123</p>
   </div>
 </template>
 

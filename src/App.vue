@@ -4,7 +4,11 @@
       <transition name="fade">
         <mobile-nav-menu class="nav-menu" v-if="toggleMenu" />
       </transition>
-      <menu-closer v-if="toggleMenu" />
+      <menu-closer
+        v-if="toggleMenu"
+        class="nav-menu__closer"
+        @close-menu="toggleMenu = false"
+      />
       <header-main @handleToggleMenu="toggleMenu = !toggleMenu" />
       <BaseLayout class="base">
         <router-view />
@@ -53,6 +57,12 @@ export default {
   top: 0;
   left: 0;
   z-index: 1020;
+  &__closer {
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.58);
+    }
+  }
 }
 
 //transition

@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-closer"></div>
+  <div class="menu-closer" @click="$emit('close-menu')"></div>
 </template>
 
 <script>
