@@ -1,6 +1,6 @@
 <template>
   <div class="mobile-menu">
-    <header class="mobile-menu__header" @click="$emit('close-icon-menu')">
+    <header class="mobile-menu__header" @click="closeMenuEvent">
       <app-icon class="mobile-menu__header-icon" view-box="0 0 47.971 47.971">
         <icon-close-menu />
       </app-icon>
@@ -8,7 +8,15 @@
     <main class="mobile-menu__main">
       <nav-bar mobile-menu="false" />
     </main>
-    <footer class="mobile-menu__footer"></footer>
+    <footer class="mobile-menu__footer">
+      <app-button class="mobile-menu__footer-enter" @click="closeMenuEvent">
+        Войти
+      </app-button>
+      <app-button class="mobile-menu__footer-registration" @click="closeMenuEvent">
+        Регистрация
+      </app-button>
+      <ui-btn-cart @handleCartEvent="closeMenuEvent" />
+    </footer>
   </div>
 </template>
 
@@ -16,9 +24,24 @@
 import AppIcon from "@/components/appComponents/AppIcon";
 import IconCloseMenu from "@/assets/icons/icon-close-menu";
 import NavBar from "@/layouts/headerLayoutsElement/NavBar";
+import AppButton from "@/components/appComponents/AppButton";
+import UiBtnCart from "@/components/uiComponents/UiBtnCart";
 export default {
   name: "MobileNavMenu",
-  components: { NavBar, IconCloseMenu, AppIcon }
+
+  components: { UiBtnCart, NavBar, IconCloseMenu, AppIcon, AppButton },
+
+  props: {
+    toggleMenu: {
+      type: Boolean
+    }
+  },
+
+  methods: {
+    closeMenuEvent() {
+      this.$emit('close-icon-menu');
+    }
+  }
 };
 </script>
 
@@ -38,6 +61,17 @@ export default {
     &:hover {
       color: #3fb984;
       cursor: pointer;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    &-enter {
+      margin-bottom: 10px;
+    }
+    &-registration {
+      margin-bottom: 10px;
     }
   }
 

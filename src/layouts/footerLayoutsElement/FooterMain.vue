@@ -1,14 +1,18 @@
 <template>
   <div class="footer">
     <div class="footer__wrapper">
-      <p class="footer__wrapper-content">footer footer footer footer footer footer footer footer footer footer footer footer footer</p>
+      <p class="footer__wrapper-content">
+        footer footer footer footer footer footer footer footer footer footer
+        footer footer footer
+      </p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "FooterMain"
+  name: "FooterMain",
+  props: {}
 };
 </script>
 

@@ -1,12 +1,13 @@
 <template>
-  <router-link class="btn-cart" :to="{ name: 'CartPage' }">
-    <app-icon view-box="0 -31 512.00026 512" class="btn-cart__icon">
-      <icon-cart-product />
-    </app-icon>
-    Корзина: {{ quantity }}
-  </router-link>
+  <div @click="$emit('handleCartEvent')">
+    <router-link class="btn-cart" :to="{ name: 'CartPage' }">
+      <app-icon view-box="0 -31 512.00026 512" class="btn-cart__icon">
+        <icon-cart-product />
+      </app-icon>
+      Корзина: {{ quantity }}
+    </router-link>
+  </div>
 </template>
-
 <script>
 import AppIcon from "@/components/appComponents/AppIcon";
 import IconCartProduct from "@/assets/icons/icon-cart-product";

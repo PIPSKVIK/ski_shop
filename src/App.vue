@@ -6,6 +6,7 @@
           class="nav-menu"
           v-if="toggleMenu"
           @close-icon-menu="toggleMenu = false"
+          :toggleMenu="toggleMenu"
         />
       </transition>
       <menu-closer
