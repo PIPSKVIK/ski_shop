@@ -4,17 +4,15 @@
       <transition name="fade">
         <mobile-nav-menu
           class="nav-menu"
-          v-if="toggleMenu"
+          v-if="getToggleMenu"
           @close-icon-menu="toggleMenu = false"
-          :toggleMenu="toggleMenu"
         />
       </transition>
       <menu-closer
-        v-if="toggleMenu"
+        v-if="getToggleMenu"
         class="nav-menu__closer"
-        @close-menu="toggleMenu = false"
       />
-      <header-main @handleToggleMenu="toggleMenu = !toggleMenu" />
+      <header-main />
       <BaseLayout class="base">
         <router-view />
       </BaseLayout>
@@ -30,13 +28,12 @@ import HeaderMain from "@/layouts/headerLayoutsElement/HeaderMain";
 import FooterMain from "@/layouts/footerLayoutsElement/FooterMain";
 import MobileNavMenu from "@/layouts/headerLayoutsElement/MobileNavMenu";
 import MenuCloser from "@/components/componentsUtils/MenuCloser";
+import { mapGetters } from "vuex";
+
 export default {
   components: { MenuCloser, MobileNavMenu, FooterMain, BaseLayout, HeaderMain },
-
-  data() {
-    return {
-      toggleMenu: false
-    };
+  computed: {
+    ...mapGetters(["getToggleMenu"])
   }
 };
 </script>
@@ -69,9 +66,7 @@ export default {
     }
   }
 }
-
 //transition
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;

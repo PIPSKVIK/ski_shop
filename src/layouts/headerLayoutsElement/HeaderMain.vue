@@ -2,10 +2,7 @@
   <header class="header">
     <div class="header__top">
       <p class="header__top-title">Мы не просто лыжный магазин</p>
-      <ui-burger-menu
-        class="header__top-menu"
-        @handleToggleMenu="$emit('handleToggleMenu')"
-      />
+      <ui-burger-menu class="header__top-menu" @handleToggleMenu="changeToggleMenu()" />
     </div>
     <nav class="header__nav">
       <search-header-block class="header__nav-search" />
@@ -31,10 +28,13 @@ import SearchHeaderBlock from "@/layouts/headerLayoutsElement/SearchHeaderBlock"
 import AppButton from "@/components/appComponents/AppButton";
 import UiBtnCart from "@/components/uiComponents/UiBtnCart";
 import UiBurgerMenu from "@/components/uiComponents/UiBurgerMenu";
+import { mapMutations } from "vuex";
 export default {
   name: "Header",
-
-  components: { UiBurgerMenu, UiBtnCart, AppButton, SearchHeaderBlock, NavBar }
+  components: { UiBurgerMenu, UiBtnCart, AppButton, SearchHeaderBlock, NavBar },
+  methods: {
+    ...mapMutations(["changeToggleMenu"])
+  }
 };
 </script>
 

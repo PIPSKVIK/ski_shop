@@ -10,7 +10,11 @@
       </swiper>
     </div>
     <div class="home-page__advantages">
-      <home-page-advantages />
+      <home-page-advantages>
+        <app-icon view-box="0 0 512 512">
+          <icon-quality />
+        </app-icon>
+      </home-page-advantages>
     </div>
   </div>
 </template>
@@ -19,11 +23,15 @@
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 import HomePageAdvantages from "@/layouts/homePageLayout/HomePageAdvantages";
+import AppIcon from "@/components/appComponents/AppIcon";
+import IconQuality from "@/assets/icons/icon-quality";
 
 export default {
   name: "HomePage",
   title: "Loop mode / Infinite loop",
   components: {
+    IconQuality,
+    AppIcon,
     HomePageAdvantages,
     Swiper,
     SwiperSlide

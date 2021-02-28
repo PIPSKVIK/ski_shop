@@ -1,10 +1,15 @@
 <template>
-  <div class="menu-closer" @click="$emit('close-menu')"></div>
+  <div class="menu-closer" @click="changeToggleMenu()"></div>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
-  name: "MenuCloser"
+  name: "MenuCloser",
+  methods: {
+    ...mapMutations(["changeToggleMenu"])
+  }
 };
 </script>
 

@@ -12,7 +12,10 @@
       <app-button class="mobile-menu__footer-enter" @click="closeMenuEvent">
         Войти
       </app-button>
-      <app-button class="mobile-menu__footer-registration" @click="closeMenuEvent">
+      <app-button
+        class="mobile-menu__footer-registration"
+        @click="closeMenuEvent"
+      >
         Регистрация
       </app-button>
       <ui-btn-cart @handleCartEvent="closeMenuEvent" />
@@ -26,20 +29,16 @@ import IconCloseMenu from "@/assets/icons/icon-close-menu";
 import NavBar from "@/layouts/headerLayoutsElement/NavBar";
 import AppButton from "@/components/appComponents/AppButton";
 import UiBtnCart from "@/components/uiComponents/UiBtnCart";
+import { mapMutations } from "vuex";
 export default {
   name: "MobileNavMenu",
 
   components: { UiBtnCart, NavBar, IconCloseMenu, AppIcon, AppButton },
 
-  props: {
-    toggleMenu: {
-      type: Boolean
-    }
-  },
-
   methods: {
+    ...mapMutations(["changeToggleMenu"]),
     closeMenuEvent() {
-      this.$emit('close-icon-menu');
+      this.changeToggleMenu();
     }
   }
 };
