@@ -7,6 +7,26 @@ const state = () => ({
     { id: 2, text: "Широкий ассортимент товаров" },
     { id: 3, text: "Быстрая доставка по всей России" },
     { id: 4, text: "Профессиональные консультанты" }
+  ],
+  links: [
+    {
+      id: 1,
+      cardName: "Лыжы",
+      backgroundImg: "image-catalog-link-ski.jpg",
+      cardLink: "CatalogSki"
+    },
+    {
+      id: 2,
+      cardName: "Палки",
+      backgroundImg: "image-catalog-link-poles.jpg",
+      cardLink: "CatalogSkiPoles"
+    },
+    {
+      id: 3,
+      cardName: "Ботинки",
+      backgroundImg: "images-catalog-link-boots.jpeg",
+      cardLink: "CatalogSkiBoots"
+    }
   ]
 });
 
@@ -24,6 +44,9 @@ const getters = {
   },
   getAdvantagesItems(state) {
     return state.advantagesItems;
+  },
+  getLinks(state) {
+    return state.links;
   }
 };
 
