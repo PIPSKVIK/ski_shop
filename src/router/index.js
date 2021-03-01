@@ -12,7 +12,31 @@ const routes = [
   {
     path: "/catalog",
     name: "CatalogPage",
-    component: () => import("../views/CatalogPage")
+    redirect: { name: "AllProducts" },
+    component: () => import("../views/CatalogPage"),
+    children: [
+      {
+        path: "allProducts",
+        name: "AllProducts",
+        component: () =>
+          import("../views/homePageCatalogLinks/CatalogAllProducts")
+      },
+      {
+        path: "catalogSki",
+        name: "CatalogSki",
+        component: () => import("../views/homePageCatalogLinks/CatalogSki")
+      },
+      {
+        path: "catalogSkiBoots",
+        name: "CatalogSkiBoots",
+        component: () => import("../views/homePageCatalogLinks/CatalogSkiBoots")
+      },
+      {
+        path: "catalogSkiPoles",
+        name: "CatalogSkiPoles",
+        component: () => import("../views/homePageCatalogLinks/CatalogSkiPoles")
+      }
+    ]
   },
   {
     path: "/news",

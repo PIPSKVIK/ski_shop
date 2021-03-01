@@ -6,6 +6,9 @@
     <div class="home-page__advantages">
       <home-page-advantages :items="getAdvantagesItems" />
     </div>
+    <div class="home-page__catalog">
+      <home-page-catalog-links />
+    </div>
   </div>
 </template>
 
@@ -14,10 +17,12 @@ import "swiper/css/swiper.css";
 import MainSlider from "@/components/componentsUtils/MainSlider";
 import HomePageAdvantages from "@/layouts/homePageLayout/HomePageAdvantages";
 import { mapGetters } from "vuex";
+import HomePageCatalogLinks from "@/layouts/homePageLayout/HomePageCatalogLinks";
 
 export default {
   name: "HomePage",
   components: {
+    HomePageCatalogLinks,
     HomePageAdvantages,
     MainSlider
   },
@@ -33,7 +38,10 @@ export default {
   padding: 0 15px;
   margin: 0 auto;
   &__advantages {
-    padding-top: 10px;
+    margin-top: 10px;
+  }
+  &__catalog {
+    margin-top: 40px;
   }
 }
 </style>
