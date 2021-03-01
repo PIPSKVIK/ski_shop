@@ -40,7 +40,6 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

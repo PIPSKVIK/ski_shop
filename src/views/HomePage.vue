@@ -4,29 +4,25 @@
       <main-slider />
     </div>
     <div class="home-page__advantages">
-      <home-page-advantages>
-        <app-icon view-box="0 0 512 512">
-          <icon-quality />
-        </app-icon>
-      </home-page-advantages>
+      <home-page-advantages :items="getAdvantagesItems" />
     </div>
   </div>
 </template>
 
 <script>
 import "swiper/css/swiper.css";
-import HomePageAdvantages from "@/layouts/homePageLayout/HomePageAdvantages";
-import AppIcon from "@/components/appComponents/AppIcon";
-import IconQuality from "@/assets/icons/icon-quality";
 import MainSlider from "@/components/componentsUtils/MainSlider";
+import HomePageAdvantages from "@/layouts/homePageLayout/HomePageAdvantages";
+import { mapGetters } from "vuex";
 
 export default {
   name: "HomePage",
   components: {
-    MainSlider,
-    IconQuality,
-    AppIcon,
-    HomePageAdvantages
+    HomePageAdvantages,
+    MainSlider
+  },
+  computed: {
+    ...mapGetters(["getAdvantagesItems"])
   }
 };
 </script>

@@ -1,24 +1,25 @@
 <template>
   <div class="advantages">
-    <div class="advantages__item" v-for="item in items" :key="item.id">
-      <slot />
-      <span>{{ item.text }}</span>
+    <div class="advantages__item item" v-for="item in items" :key="item.id">
+      <app-icon class="item__icon" width="30" height="30" view-box="0 0 512 512">
+        <icon-quality />
+      </app-icon>
+      <p class="item__text">{{ item.text }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import AppIcon from "@/components/appComponents/AppIcon";
+import IconQuality from "@/assets/icons/icon-quality";
 export default {
   name: "HomePageAdvantages",
-  data() {
-    return {
-      items: [
-        { id: 1, text: "Качественные товары" },
-        { id: 2, text: "Широкий ассортимент товаров" },
-        { id: 3, text: "Быстрая доставка по всей России" },
-        { id: 4, text: "Профессиональные консультанты" }
-      ]
-    };
+  components: { IconQuality, AppIcon },
+  props: {
+    items: {
+      type: Array,
+      required: true
+    }
   }
 };
 </script>
@@ -28,7 +29,7 @@ export default {
   display: flex;
   justify-content: space-between;
   &__item {
-    width: 250px;
+    width: 230px;
     padding: 50px 5px;
     background: var(--white-color);
     text-align: center;
@@ -36,6 +37,43 @@ export default {
     border: 2px solid var(--white-color);
     &:hover {
       border: 2px solid var(--vue-color);
+    }
+  }
+}
+
+.item {
+  &__text {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  &__icon {
+    color: var(--vue-color);
+  }
+}
+
+@media (max-width: 992px) {
+  .advantages {
+    &__item {
+      width: 20%;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .advantages {
+    flex-wrap: wrap;
+    &__item {
+      width: 48%;
+      margin: 5px 0;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  .advantages {
+    &__item {
+      width: 100%;
     }
   }
 }
